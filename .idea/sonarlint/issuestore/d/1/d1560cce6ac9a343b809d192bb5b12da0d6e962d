@@ -1,0 +1,10 @@
+
+b
+java:S1192!"GDefine a constant instead of duplicating this literal "status" 3 times.(Ìòÿ²þÿÿÿÿ
+e
+java:S2583"CChange this condition so that it does not always evaluate to "true"(¤¦ß‘üÿÿÿÿ8®Ïóº›/
+l
+java:S1128
+"QRemove this unused import 'org.springframework.web.bind.annotation.RequestParam'.(Â¬À·ùÿÿÿÿ
+U	java:S106"9Replace this use of System.out or System.err by a logger.(Éáðè8¶Ïóº›/
+U	java:S106"9Replace this use of System.out or System.err by a logger.(öÄ¯ò8¸Ïóº›/
