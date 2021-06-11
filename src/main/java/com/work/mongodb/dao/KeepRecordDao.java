@@ -1,9 +1,8 @@
-package com.work.mongodb.dao2;
+package com.work.mongodb.dao;
 
-import com.work.mongodb.entity2.KeepRecord;
+import com.work.mongodb.entity.KeepRecord;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
-import java.util.Date;
 import java.util.List;
 
 public interface KeepRecordDao extends MongoRepository<KeepRecord,String> {

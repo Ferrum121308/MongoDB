@@ -1,4 +1,4 @@
-package com.work.mongodb.entity2;
+package com.work.mongodb.entity;
 
 
 

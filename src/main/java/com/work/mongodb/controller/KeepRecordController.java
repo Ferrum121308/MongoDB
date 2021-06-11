@@ -1,15 +1,13 @@
-package com.work.mongodb.controller2;
+package com.work.mongodb.controller;
 
-import com.work.mongodb.entity2.KeepRecord;
-import com.work.mongodb.entity2.Time;
-import com.work.mongodb.service2.KeepProjectService;
-import com.work.mongodb.service2.KeepRecordService;
-import com.work.mongodb.service2.UserService;
+import com.work.mongodb.entity.KeepRecord;
+import com.work.mongodb.entity.Time;
+import com.work.mongodb.service.KeepProjectService;
+import com.work.mongodb.service.KeepRecordService;
+import com.work.mongodb.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 

@@ -1,6 +1,6 @@
-package com.work.mongodb.dao2;
+package com.work.mongodb.dao;
 
-import com.work.mongodb.entity2.KeepProject;
+import com.work.mongodb.entity.KeepProject;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 import java.util.List;

@@ -1,8 +1,8 @@
-package com.work.mongodb.service2;
+package com.work.mongodb.service;
 
 
-import com.work.mongodb.dao2.KeepProjectDao;
-import com.work.mongodb.entity2.KeepProject;
+import com.work.mongodb.dao.KeepProjectDao;
+import com.work.mongodb.entity.KeepProject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

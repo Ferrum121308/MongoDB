@@ -1,8 +1,8 @@
-package com.work.mongodb.controller2;
+package com.work.mongodb.controller;
 
 
-import com.work.mongodb.entity2.KeepProject;
-import com.work.mongodb.service2.KeepProjectService;
+import com.work.mongodb.entity.KeepProject;
+import com.work.mongodb.service.KeepProjectService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
