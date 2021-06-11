@@ -2,7 +2,9 @@ package com.work.mongodb.service;
 
 
 import com.work.mongodb.dao.KeepProjectDao;
+import com.work.mongodb.dao.UserDao;
 import com.work.mongodb.entity.KeepProject;
+import com.work.mongodb.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,10 +19,18 @@ public class KeepProjectService {
     @Autowired
     KeepProjectDao keepProjectDao;
 
+    @Autowired
+    UserDao userDao;
 
     //查询所有的项目
     public List<KeepProject> findAllProjects(){
         return keepProjectDao.findAll();
+    }
+
+    //根据projectId判断项目是否存在
+    public boolean existById(String projectId){
+        KeepProject uncheck = keepProjectDao.findKeepProjectByProjectId(projectId);
+        return uncheck != null;
     }
 
 
@@ -34,7 +44,8 @@ public class KeepProjectService {
 
 
     //插入或者更新项目信息
-    public Map<String,Object> saveProject(KeepProject incomeProject){
+    public Map<String,Object> saveProject(String userId,KeepProject incomeProject){
+        User toSave = userDao.findUserByUserId(userId);
         Map<String,Object> condition = new HashMap<>();
         if(!isExist(incomeProject)){
             keepProjectDao.save(incomeProject);

@@ -45,6 +45,9 @@ public class UserService {
     public Map<String,Object> saveUser(User incomeUser){
         Map<String,Object> condition = new HashMap<>();
         if(!isExist(incomeUser)){
+            String[] projectId = {"0"};
+            incomeUser.setProjectId(projectId);
+            //System.out.println(projectId[0]);
             userDao.save(incomeUser);
             condition.put("condition","插入完成");
         }

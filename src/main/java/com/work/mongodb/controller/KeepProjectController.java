@@ -34,8 +34,8 @@ public class KeepProjectController {
 
 
     @RequestMapping(value = "/saveProject",method = RequestMethod.POST)
-    public Map<String,Object> saveProject(@RequestBody KeepProject keepProject){
-        return keepProjectService.saveProject(keepProject);
+    public Map<String,Object> saveProject(@RequestParam("userId")String userId,@RequestBody KeepProject keepProject){
+        return keepProjectService.saveProject(userId,keepProject);
     }
 
 

@@ -6,4 +6,4 @@ spring:
       port: 27017
       database: MongoDBWork
 server:
-  port: 8089
+  port: 8088

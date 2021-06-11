@@ -18,6 +18,10 @@ public class KeepRecordService {
     @Autowired
     KeepRecordDao keepRecordDao;
 
+    @Autowired
+    KeepProjectService keepProjectService;
+
+
     public List<KeepRecord> findAllRecords(){
         return keepRecordDao.findAll();
     }
@@ -41,13 +45,20 @@ public class KeepRecordService {
     public Map<String,Object> saveRecord(KeepRecord incomeKeepRecord){
         Map<String,Object> condition = new HashMap<>();
         if(!isExist(incomeKeepRecord)){
+            incomeKeepRecord.setProjectId("0");
             keepRecordDao.save(incomeKeepRecord);
             condition.put("condition","插入完成！");
         }
         else{
             KeepRecord keepRecord = keepRecordDao.findKeepRecordByRecordId(incomeKeepRecord.getRecordId());
             if(incomeKeepRecord.getProjectId() != null){
-                keepRecord.setProjectId(incomeKeepRecord.getProjectId());
+                if(!keepProjectService.existById(incomeKeepRecord.getProjectId())){
+                    condition.put("condition","项目不存在，请重试！");
+                    return condition;
+                }
+                else {
+                    keepRecord.setProjectId(incomeKeepRecord.getProjectId());
+                }
             }
             if(incomeKeepRecord.getRecordName() != null){
                 keepRecord.setRecordName(incomeKeepRecord.getRecordName());
